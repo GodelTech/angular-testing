@@ -168,9 +168,9 @@ stages:
           deploy:
             steps:
 
-            - task: Npm@1
-              displayName: 'Publish lib in npm registry'
-              inputs:
-                command: 'publish'
-                workingDir: '$(Pipeline.Workspace)/lib'
-                publishEndpoint: 'npm'
+            # - task: Npm@1
+            #   displayName: 'Publish lib in npm registry'
+            #   inputs:
+            #     command: 'publish'
+            #     workingDir: '$(Pipeline.Workspace)/lib'
+            #     publishEndpoint: 'npm'
