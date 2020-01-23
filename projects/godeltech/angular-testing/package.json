@@ -1,0 +1,42 @@
+{
+  "name": "@godeltech/angular-testing",
+  "version": "1.0.0-rc.1",
+  "description": "Angular testing helper",
+  "license": "MIT",
+  "author": {
+    "name": "Maksim Tsaryk",
+    "url": "https://github.com/maxtsaryk"
+  },
+  "contributors": [
+    {
+      "name": "Maksim Tsaryk",
+      "url": "https://github.com/maxtsaryk"
+    },
+    {
+      "name": "Vladimir Rodchenko",
+      "url": "https://github.com/rodchenkov"
+    }
+  ],
+  "homepage": "https://github.com/Godel/angular-testing.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Godel/angular-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Godel/angular-testing/issues"
+  },
+  "keywords": [
+    "angular",
+    "test",
+    "karma",
+    "godel",
+    "godeltech",
+    "beforeAll setup",
+    "TestBed setup"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "bundledDependencies": []
+}
