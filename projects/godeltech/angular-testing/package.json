@@ -17,13 +17,13 @@
       "url": "https://github.com/rodchenkov"
     }
   ],
-  "homepage": "https://github.com/Godel/angular-testing.git",
+  "homepage": "https://github.com/godeltech/angular-testing.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Godel/angular-testing.git"
+    "url": "https://github.com/godeltech/angular-testing.git"
   },
   "bugs": {
-    "url": "https://github.com/Godel/angular-testing/issues"
+    "url": "https://github.com/godeltech/angular-testing/issues"
   },
   "keywords": [
     "angular",
