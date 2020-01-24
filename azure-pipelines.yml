@@ -12,13 +12,13 @@ pr:
     - '*'
 
 variables:
-  packageName: '@godeltech/angular-testing'
-  libSrcLocation: 'projects/godeltech/angular-testing'
-  builtLibLocation: 'dist/godeltech/angular-testing'
-  libCoverageLocation: 'coverage/lib'
-  libTestResultLocation: 'junit/lib'
-  demoTestResultLocation: 'junit/demo'
   artifactDirectory: 'lib'
+  builtLibLocation: 'dist/godeltech/angular-testing'
+  demoTestResultLocation: 'junit/demo'
+  libCoverageLocation: 'coverage/lib'
+  libSrcLocation: 'projects/godeltech/angular-testing'
+  libTestResultLocation: 'junit/lib'
+  packageName: '@godeltech/angular-testing'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -78,7 +78,7 @@ stages:
           customCommand: 'run build:lib'
 
       - task: PublishPipelineArtifact@1
-        displayName: 'Publish Pipeline Artifact: lib'
+        displayName: 'Publish Pipeline Artifac in $(artifactDirectory) directory'
         inputs:
           path: '$(System.DefaultWorkingDirectory)/$(builtLibLocation)'
           artifact: '$(artifactDirectory)'
