@@ -12,12 +12,12 @@ pr:
     - '*'
 
 variables:
-  artifactDirectory: 'lib'
-  builtLibLocation: 'dist/godeltech/angular-testing'
-  demoTestResultLocation: 'junit/demo'
-  libCoverageLocation: 'coverage/lib'
-  libSrcLocation: 'projects/godeltech/angular-testing'
-  libTestResultLocation: 'junit/lib'
+  artifactDirectory: lib
+  builtLibLocation: dist/godeltech/angular-testing
+  demoTestResultLocation: junit/demo
+  libCoverageLocation: coverage/lib
+  libSrcLocation: projects/godeltech/angular-testing
+  libTestResultLocation: junit/lib
   packageName: '@godeltech/angular-testing'
 
 pool:
