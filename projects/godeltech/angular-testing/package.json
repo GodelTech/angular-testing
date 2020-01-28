@@ -1,6 +1,6 @@
 {
   "name": "@godeltech/angular-testing",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Angular testing helper",
   "license": "MIT",
   "author": {
@@ -37,6 +37,9 @@
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bundledDependencies": []
 }
