@@ -1,0 +1,9 @@
+<button class="toggle-btn" (dblclick)="onContainerToggle()">double click here to toggle!</button>
+<div class="container" *ngIf="showContainer">
+    <input [(ngModel)]="inputValue">
+    <button (click)="onItemCreate()">add</button>
+    <div *ngFor="let item of items">
+        <span class="item-name" [ngClass]="{ selected: item.isSelected }" (click)="onItemClick(item)">{{ item.name }}</span>
+        <button (click)="onItemRemove(item.id)">close</button>
+    </div>
+</div>
