@@ -16,7 +16,8 @@ variables:
   builtLibLocation: dist/godeltech/angular-testing
   demoTestResultLocation: junit/demo
   libCoverageLocation: coverage/lib
-  libSrcLocation: projects/godeltech/angular-testing
+  libLocation: projects/godeltech/angular-testing
+  libSrcLocation: projects/godeltech/angular-testing/src
   libTestResultLocation: junit/lib
   packageName: '@godeltech/angular-testing'
   sonarCloudOrganizationName: godeltech
@@ -57,7 +58,7 @@ stages:
         displayName: 'Get current version'
         inputs:
           targetType: 'inline'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/$(libLocation)'
           script: |
             npm version | ConvertFrom-Json | Select-Object -ExpandProperty $(packageName) | Set-Variable -Name packageVersion
             Write-Host "##vso[task.setvariable variable=currentPackageVersion;]$packageVersion"
@@ -67,12 +68,12 @@ stages:
         condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
         inputs:
           targetType: 'inline'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/$(libLocation)'
           script: |
             npm --no-git-tag-version version $(currentPackageVersion)$(versionSuffix)
 
       - task: SonarCloudPrepare@1
-        displayName: 'Run sonar art analysis'
+        displayName: 'Prepare SonarCloud Analysis Configuration'
         inputs:
           SonarCloud: 'SonarCloud'
           organization: '$(sonarCloudOrganizationName)'
@@ -86,8 +87,8 @@ stages:
             sonar.exclusions=**/node_modules/**,**/*.spec.ts
             sonar.tests=$(System.DefaultWorkingDirectory)/$(libSrcLocation)
             sonar.test.inclusions=$(System.DefaultWorkingDirectory)/$(libSrcLocation)/**/*.spec.ts
-            sonar.ts.tslintconfigpath=tslint.json
-            sonar.typescript.lcov.reportPaths=coverage/lcov.info
+            sonar.ts.tslintconfigpath=$(System.DefaultWorkingDirectory)/tslint.json
+            sonar.typescript.lcov.reportPaths=$(System.DefaultWorkingDirectory)/$(libCoverageLocation)/lcov.info
             sonar.typescript.exclusions=**/node_modules/**,**/typings.d.ts,**/main.ts,**/environments/environment*.ts,**/*routing.module.ts
 
       - task: Npm@1
