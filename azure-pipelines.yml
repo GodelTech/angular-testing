@@ -72,7 +72,7 @@ stages:
             npm --no-git-tag-version version $(currentPackageVersion)$(versionSuffix)
 
       - task: SonarCloudPrepare@1
-        displayName: 'Run sonar art analysis for lib'
+        displayName: 'Run sonar art analysis'
         inputs:
           SonarCloud: 'SonarCloud'
           organization: '$(sonarCloudOrganizationName)'
@@ -80,8 +80,15 @@ stages:
           configMode: 'manual'
           cliProjectKey: '$(Build.DefinitionName)'
           cliProjectName: '$(Build.DefinitionName)'
-          cliProjectVersion: $(currentPackageVersion)
+          cliProjectVersion: '$(currentPackageVersion)$(versionSuffix)'
           cliSources: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
+          extraProperties: |
+            sonar.exclusions=**/node_modules/**,**/*.spec.ts
+            sonar.tests=$(System.DefaultWorkingDirectory)/$(libSrcLocation)
+            sonar.test.inclusions=$(System.DefaultWorkingDirectory)/$(libSrcLocation)/**/*.spec.ts
+            sonar.ts.tslintconfigpath=tslint.json
+            sonar.typescript.lcov.reportPaths=coverage/lcov.info
+            sonar.typescript.exclusions=**/node_modules/**,**/typings.d.ts,**/main.ts,**/environments/environment*.ts,**/*routing.module.ts
 
       - task: Npm@1
         displayName: 'Build'
@@ -117,6 +124,20 @@ stages:
           testRunTitle: lib
           testResultsFormat: JUnit
           testResultsFiles: "**/TESTS*.xml"
+
+      - task: SonarCloudAnalyze@1
+        displayName: 'Run Code Analysis'
+
+      - task: SonarCloudPublish@1
+        displayName: 'Publish Quality Gate Result'
+        inputs:
+          pollingTimeoutSec: '300'
+
+      - task: sonarcloud-buildbreaker@2
+        displayName: 'Break build on quality gate failure'
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: '$(sonarCloudOrganizationName)'
 
     - job: Demo
       displayName: 'Build and test demo'
