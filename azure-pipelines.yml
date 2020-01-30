@@ -54,7 +54,6 @@ stages:
 
       - task: PowerShell@2
         displayName: 'Get current version'
-        condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
         inputs:
           targetType: 'inline'
           workingDirectory: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
@@ -70,6 +69,18 @@ stages:
           workingDirectory: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
           script: |
             npm --no-git-tag-version version $(currentPackageVersion)$(versionSuffix)
+
+      - task: SonarCloudPrepare@1
+        displayName: 'Run sonar art analysis for lib'
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: 'godeltech'
+          scannerMode: 'CLI'
+          configMode: 'manual'
+          cliProjectKey: '$(Build.DefinitionName)'
+          cliProjectName: '$(Build.DefinitionName)'
+          cliProjectVersion: $(currentPackageVersion)
+          cliSources: '$(System.DefaultWorkingDirectory)/$(libSrcLocation)'
 
       - task: Npm@1
         displayName: 'Build'

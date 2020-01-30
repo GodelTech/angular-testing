@@ -1,5 +1,6 @@
 {
   "defaultSeverity": "error",
+  "extends": "tslint-sonarts",
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
