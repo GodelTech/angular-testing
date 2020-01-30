@@ -19,6 +19,7 @@ variables:
   libSrcLocation: projects/godeltech/angular-testing
   libTestResultLocation: junit/lib
   packageName: '@godeltech/angular-testing'
+  sonarCloudOrganizationName: godeltech
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -74,7 +75,7 @@ stages:
         displayName: 'Run sonar art analysis for lib'
         inputs:
           SonarCloud: 'SonarCloud'
-          organization: 'godeltech'
+          organization: '$(sonarCloudOrganizationName)'
           scannerMode: 'CLI'
           configMode: 'manual'
           cliProjectKey: '$(Build.DefinitionName)'
