@@ -2,13 +2,12 @@
 
 ## Build
 
-[![Azure DevOps builds (master)](https://godeltech.visualstudio.com/OpenSource/_apis/build/status/angular-testing?branchName=master)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
-[![Azure DevOps tests (master)](https://godeltech.visualstudio.com/OpenSource/_apis/tests/status/angular-testing?branchName=master)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
-[![Azure DevOps coverage (master)](https://godeltech.visualstudio.com/OpenSource/_apis/caverage/status/angular-testing?branchName=master)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
+[![Azure DevOps builds (master)](https://img.shields.io/azure-devops/build/GodelTech/OpenSource/55?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=feature/libraries-update)
+[![Azure DevOps tests (master)](https://img.shields.io/azure-devops/tests/GodelTech/OpenSource/55?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=feature/libraries-update)
+[![Azure DevOps coverage (master)](https://img.shields.io/azure-devops/coverage/GodelTech/OpenSource/55?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=feature/libraries-update)
 [![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/angular-testing?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=angular-testing)
 [![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/angular-testing?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=angular-testing)
 [![Sonar Violations](https://img.shields.io/sonar/violations/angular-testing?format=long&server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=angular-testing)
-
 ## Introduction
 
 Angular package that helps to easily setup BeforeAll TestBed configuration. It allows you to improve the speed of tests run by 3-5 times and without any changes in your existing tests.
