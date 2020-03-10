@@ -6,7 +6,7 @@
     "start": "ng serve demo",
     "build:lib": "npm run lint:lib && ng build @godeltech/angular-testing",
     "build:demo": "npm run lint:demo && ng build demo",
-    "test:lib": "ng test @godeltech/angular-testing",
+    "test:lib": "ng test @godeltech/angular-testing --code-coverage",
     "test:demo": "ng test demo",
     "lint:lib": "ng lint @godeltech/angular-testing",
     "lint:demo": "ng lint demo"
