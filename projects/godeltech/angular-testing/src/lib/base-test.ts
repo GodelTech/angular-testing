@@ -10,6 +10,7 @@ export class BaseTest {
      * TestBed configuration with single setup option.
      */
     public static setupTestBed = (moduleDef: TestModuleMetadata) => {
+      // @ts-ignore
         beforeAll(done =>
             (async () => {
                 resetTestingModule();
@@ -21,6 +22,7 @@ export class BaseTest {
                 .catch(done.fail)
         );
 
+      // @ts-ignore
         afterAll(() => allowAngularToReset());
     }
 }
