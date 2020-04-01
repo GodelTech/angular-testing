@@ -2,7 +2,7 @@
 
 ## Build
 
-[![Azure DevOps builds (master)]https://img.shields.io/azure-devops/build/GodelTech/OpenSource/53?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
+[![Azure DevOps builds (master)](https://img.shields.io/azure-devops/build/GodelTech/OpenSource/53?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
 [![Azure DevOps tests (master)](https://img.shields.io/azure-devops/tests/GodelTech/OpenSource/53?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
 [![Azure DevOps coverage (master)](https://img.shields.io/azure-devops/coverage/GodelTech/OpenSource/53?style=flat-square)](https://dev.azure.com/GodelTech/OpenSource/_build/latest?definitionId=53&branchName=master)
 [![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/angular-testing?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=angular-testing)
