@@ -15,8 +15,8 @@
 
 ## Introduction
 
-Angular package that helps to easily setup BeforeAll TestBed configuration. It allows you to improve the speed of tests run by 3-5 times and without any changes in your existing tests.
-Also it has methods helpers to trigger common html event actions.
+Angular package that helps to setup BeforeAll TestBed configuration easily. It allows you to improve the speed of tests run by 3-5 times and without any changes in your existing tests.
+Also it has methods which help to trigger common html event actions.
 
 ## Installation
 
@@ -26,7 +26,7 @@ $ npm i @godeltech/angular-testing
 
 ## Description
 
-By default angular offers you to setup TestBed configureTestingModule before each test. You can increase tests execution speed with single setup configuration for all tests in file, but creating an instance as well will be before each test as the main rule in unit testing.
+By default angular offers you to setup TestBed configureTestingModule before each test. You can increase tests execution speed with single setup configuration for all tests in the file, but creating an instance will also be before each test as the main rule in unit testing.
 
 For comparison I took one component with simle functionality, see [demo](https://github.com/GodelTech/angular-testing/tree/master/src) project, covered it with 11 tests, firstly with BeforeEach setup and then with BeforeAll. I duplicated them in 30 files with 110 tests in each of them. The result was 3300 tests with each of the setups. All tests are the same for all setups, just configuration is different.
 
@@ -126,7 +126,7 @@ it('toggle-btn element: should call app service', () => {
 
 ## Additional Information
 
-As a result of usage single setup configuration for all tests in file you should use global variables for yor providers. It means that after each test your setuped providers are not overwritten. Don't forget to reset values of your global variables.
+As a result of using the single setup configuration for all tests in the file you should use global variables for your providers. It means that after each test your setup providers are not overwritten. Don't forget to reset values of your global variables.
 
 ```
 describe('AppComponent', () => {
